@@ -10,7 +10,7 @@
         <div class="slide min-w-full relative">
             <img src="{{ asset('images/8.jpeg') }}" alt="Slide 1" class="w-full h-[600px] object-cover">
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-75 p-6 rounded-lg shadow-lg max-w-2xl text-center">
-                <h2 class="text-2xl font-semibold mb-2">Selamat Datang di MI BADRISSALAM NEW</h2>
+                <h2 class="text-2xl font-semibold mb-2">Hallo Test</h2>
                 <p class="text-gray-700">Pendidikan berkualitas dan lingkungan belajar yang inspiratif untuk semua siswa.</p>
             </div>
         </div>
