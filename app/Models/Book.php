@@ -13,6 +13,8 @@ class Book extends Model
         'title', 
         'category',  // Pastikan category ada di sini
         'author', 
+        'kelas',
+        'gambar',
         'pdf_file',
     ];
 }

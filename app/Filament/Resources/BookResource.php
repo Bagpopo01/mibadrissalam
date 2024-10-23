@@ -13,6 +13,7 @@ use Filament\Pages\Actions;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 
 class BookResource extends Resource
 {
@@ -28,6 +29,13 @@ class BookResource extends Resource
         ->schema([
             TextInput::make('title')->required(),
             TextInput::make('author')->required(),
+            
+                FileUpload::make('gambar')
+                    ->label('Upload Gambar')
+                    ->directory('images/buku')
+                    ->disk('public')
+                    ->image()
+                    ->required(),
             // Tambahkan dropdown untuk kategori
             Select::make('category')
                 ->label('Kategori')
@@ -35,8 +43,19 @@ class BookResource extends Resource
                     'Buku Bacaan' => 'Buku Bacaan',
                     'Materi Pelajaran' => 'Materi Pelajaran',
                 ])
+                 
                 ->required(),
             FileUpload::make('pdf_file')->required(),
+            Select::make('kelas')
+                ->label('Kelas')
+                ->options([
+                    'Kelas 1' => 'Kelas 1',
+                    'Kelas 2' => 'Kelas 2',
+                     'Kelas 3' => 'Kelas 3',
+                      'Kelas 4' => 'Kelas 4',
+                       'Kelas 5' => 'Kelas 5',
+                        'Kelas 6' => 'Kelas 6',
+                ])
         ]);
     }
     public static function getNavigationGroup(): ?string
@@ -49,7 +68,12 @@ class BookResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')->label('Judul Buku'),
-                TextColumn::make('category')->label('Kategori'),  // Tambahkan kolom kategori
+                  ImageColumn::make('gambar')
+                    ->label('Gambar')
+                    ->disk('public')
+                    ->size(100),
+                TextColumn::make('category')->label('Kategori'),
+                 TextColumn::make('kelas')->label('Untuk Kelas'),// Tambahkan kolom kategori
                 TextColumn::make('author')->label('Penulis'),
             ])
             ->actions([

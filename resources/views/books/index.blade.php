@@ -8,7 +8,7 @@
         <div class="bg-white shadow-lg rounded-lg p-6">
             <h2 class="text-2xl font-bold mb-2">{{ $book->title }}</h2>
             <p class="text-gray-700 mb-4">Pengarang: {{ $book->author }}</p>
-            <a href="{{ route('books.show', $book->id) }}" class="text-lime-500 hover:text-lime-700">
+            <a href="{{ asset('storage/' . $book->pdf_file) }}" class="text-lime-500 hover:text-lime-700">
                 Lihat Detail Buku
             </a>
         </div>

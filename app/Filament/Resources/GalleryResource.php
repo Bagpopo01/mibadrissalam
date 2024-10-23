@@ -39,7 +39,7 @@ class GalleryResource extends Resource
                 FileUpload::make('image')
                     ->label('Upload Gambar')
                     ->directory('images/galeri')
-                    ->disk('public')
+                    ->disk('public_html')
                     ->image()
                     ->required(),
             ]);
