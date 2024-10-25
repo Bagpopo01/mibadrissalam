@@ -51,7 +51,7 @@
 
         <!-- Login Button (Desktop) -->
         <div class="hidden md:block">
-            <a href="admin/login" class="bg-white text-lime-500 px-4 py-2 rounded hover:bg-gray-100 font-bold">Login</a>
+            <a href="{{ route('duallogin.duallogin') }}" class="bg-white text-lime-500 px-4 py-2 rounded hover:bg-gray-100 font-bold">Login</a>
         </div>
 
         <!-- Mobile Menu Button -->

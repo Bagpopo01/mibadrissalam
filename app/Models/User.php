@@ -24,6 +24,7 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
+        'is_admin' ,
     ];
 
     /**
@@ -47,6 +48,12 @@ class User extends Authenticatable implements FilamentUser
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    protected static function booted(): void
+    {
+        static::creating(function (User $user) {
+            $user->is_admin = '0';
+        });
     }
     
     public function canAccessPanel(Panel $panel): bool

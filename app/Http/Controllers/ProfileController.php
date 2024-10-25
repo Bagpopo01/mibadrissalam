@@ -22,5 +22,9 @@ class ProfileController extends Controller
     {
         return view('pages.gallery');
     }
+    public function duallogin()
+    {
+        return view('duallogin.duallogin');
+    }
 
 }

@@ -35,17 +35,18 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-           // Guard khusus untuk PPDB
-    'ppdb' => [
+'guards' => [
+    'web' => [
         'driver' => 'session',
-        'provider' => 'ppdbusers',
+        'provider' => 'users',
     ],
+
+    'custom' => [
+        'driver' => 'session',
+        'provider' => 'custom_users',
     ],
+],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -63,19 +64,18 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
-        ],
-
-        // Provider khusus untuk PPDB
-    'ppdbusers' => [
+'providers' => [
+    'users' => [
         'driver' => 'eloquent',
-        'model' => App\Models\PpdbUser::class,
+        'model' => App\Models\User::class,
     ],
+
+    'custom_users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\CustomUser::class,
     ],
+],
+
 
     /*
     |--------------------------------------------------------------------------

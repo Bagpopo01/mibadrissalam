@@ -24,6 +24,7 @@ class StudentResource extends Resource
     {
         return $form
             ->schema([
+                
                 Forms\Components\TextInput::make('name')
                     ->label('Nama')
                     ->required(),
